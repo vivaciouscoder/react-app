@@ -1,0 +1,48 @@
+:root {
+  --primary-font-family: "Archivo Black", sans-serif;
+  --default-font-family: "Poppins", sans-serif;
+}
+
+.card {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 20px;
+  padding-left: 0;
+  font-family: var(--default-font-family);
+}
+
+ul {
+  list-style: none;
+
+  font-size: 18px;
+}
+
+form {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: start;
+}
+
+p {
+  font-family: var(--default-font-family);
+  font-size: 14px;
+}
+
+h1,
+h2 {
+  font-family: var(--primary-font-family);
+}
+
+.unit {
+  font-family: var(--default-font-family);
+  font-size: 15px;
+}
