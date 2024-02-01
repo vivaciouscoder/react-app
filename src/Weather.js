@@ -54,7 +54,7 @@ export default function Weather() {
       <div className="row">
         <div className="col-6">
           <span>
-            <img src={weatherData.icon}></img>
+            <img src={weatherData.icon} alt="weather icon"></img>
             <h1 className="temperature  ms-4 d-inline">
               {weatherData.temperature}
               <small>°C</small>
