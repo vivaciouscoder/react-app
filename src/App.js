@@ -12,15 +12,11 @@ function App() {
           </header>
         </div>
         <p className="text-center">
-          <a href="" target="_blank">
+          <a href="https://github.com/vivaciouscoder/react-app" target="_blank">
             Open-source code
           </a>{" "}
-          , by{" "}
-          <a href="" target="_blank">
-            Viv Mousavi
-          </a>{" "}
-          hosted by{" "}
-          <a href="" target="_blank">
+          , by Viv Mousavi hosted by{" "}
+          <a href="https://app.netlify.com/" target="_blank">
             Netlify
           </a>
         </p>
