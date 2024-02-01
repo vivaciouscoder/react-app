@@ -17,7 +17,7 @@ function App() {
           </a>{" "}
           , by{" "}
           <a href="" target="_blank">
-            Vida Mousavi
+            Viv Mousavi
           </a>{" "}
           hosted by{" "}
           <a href="" target="_blank">

@@ -7,6 +7,7 @@ export default function Weather() {
   const [loaded, setLoaded] = useState(false);
 
   const [weatherData, setWeatherData] = useState({});
+
   function showWeather(response) {
     setLoaded(true);
     setWeatherData({
@@ -14,6 +15,7 @@ export default function Weather() {
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -24,7 +26,6 @@ export default function Weather() {
     axios.get(apiUrl).then(showWeather);
   }
   function updateCity(event) {
-    event.preventDefault();
     setCity(event.target.value);
   }
 
@@ -43,31 +44,22 @@ export default function Weather() {
       ></input>
     </form>
   );
-
-  return (
-    <div className="container">
-      <form className="d-flex ms-4" onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="type a city..."
-          className="w-100"
-          onChange={updateCity}
-        ></input>
-        <input
-          type="submit"
-          value="Search"
-          className="ms-4 btn btn-primary"
-        ></input>
-      </form>
+  let defaultPreview = (
+    <div>
+      {form}
       <h2 className=" ms-4 mt-3">{city}</h2>
-      <h6 className=" ms-4">Wednesday 10:20</h6>
+
       <h6 className=" ms-4 description">{weatherData.description}</h6>
 
       <div className="row">
         <div className="col-6">
-          <h1 className="temperature  ms-4 ">
-            {weatherData.temperature} <small className="unit">°C</small>
-          </h1>
+          <span>
+            <img src={weatherData.icon}></img>
+            <h1 className="temperature  ms-4 d-inline">
+              {weatherData.temperature}
+              <small>°C</small>
+            </h1>
+          </span>
         </div>
         <div className="col-6">
           <ul className="text-start">
@@ -80,4 +72,10 @@ export default function Weather() {
       </div>
     </div>
   );
+
+  if (loaded) {
+    return defaultPreview;
+  } else {
+    return form;
+  }
 }
